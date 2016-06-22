@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
 
+import { AccountsClient } from 'meteor/accounts-base'
 
 export default class App extends Component {
   render() {
@@ -16,8 +17,14 @@ export default class App extends Component {
     event.preventDefault();
     const username = ReactDOM.findDOMNode(this.refs.username).value.trim();
     const userpwd = ReactDOM.findDOMNode(this.refs.userpwd).value.trim();
-    
-   Meteor.call('authentication',username,userpwd);
 
+    
+    Meteor.loginWithPassword({username: username}, userpwd);
+
+    const token = Accounts._storedLoginToken()
+    console.log({token});
+    Accounts.loginWithToken(token, (e) => {
+      console.log(Accounts.user());
+    });
   }
 }
