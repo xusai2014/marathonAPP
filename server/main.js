@@ -3,15 +3,15 @@ import DDPClient from 'ddp';
 Meteor.startup(function(){
   __meteor_runtime_config__.ACCOUNTS_CONNECTION_URL="http://localhost:4000/"//Test url
   //__meteor_runtime_config__.ACCOUNTS_CONNECTION_URL="https://www.microduino.cn/"//live
-  BrowserPolicy.content.allowConnectOrigin("https://www.microduino.cn");
-  BrowserPolicy.content.allowFrameOrigin("https://www.microduino.cn");
-  BrowserPolicy.content.allowOriginForAll("https://www.microduino.cn");
+  // BrowserPolicy.content.allowConnectOrigin("https://www.microduino.cn");
+  // BrowserPolicy.content.allowFrameOrigin("https://www.microduino.cn");
+  // BrowserPolicy.content.allowOriginForAll("https://www.microduino.cn");
 
-  BrowserPolicy.content.allowConnectOrigin("www.microduino.cn");
-  BrowserPolicy.content.allowFrameOrigin("www.microduino.cn");
-  BrowserPolicy.content.allowOriginForAll("www.microduino.cn");
-  BrowserPolicy.content.allowEval();
-  BrowserPolicy.framing.disallow();
+  // BrowserPolicy.content.allowConnectOrigin("www.microduino.cn");
+  // BrowserPolicy.content.allowFrameOrigin("www.microduino.cn");
+  // BrowserPolicy.content.allowOriginForAll("www.microduino.cn");
+  // BrowserPolicy.content.allowEval();
+  // BrowserPolicy.framing.disallow();
 })
 
 // var ddpclient = null;
