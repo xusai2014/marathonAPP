@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import DDPClient from 'ddp';
+// const DDPCon = DDP.connect("http://localhost:4000/");
+// Articles  = new Meteor.Collection("Articles",{connection:DDPCon});
+// ArticlesLocal = new Meteor.Collection("Articles");
 Meteor.startup(function(){
   __meteor_runtime_config__.ACCOUNTS_CONNECTION_URL="http://localhost:4000/"//Test url
   //__meteor_runtime_config__.ACCOUNTS_CONNECTION_URL="https://www.microduino.cn/"//live
@@ -12,7 +15,18 @@ Meteor.startup(function(){
   // BrowserPolicy.content.allowOriginForAll("www.microduino.cn");
   // BrowserPolicy.content.allowEval();
   // BrowserPolicy.framing.disallow();
-})
+  
+  // DDPCon.subscribe('articles',function(){
+  //   Articles.find().observeChanges({
+  //     added: function(id,doc){
+  //         ArticlesLocal.insert(doc);
+  //     }
+  //   });
+  // });
+  // Meteor.publish('articlesAll',function(){
+  //   return ArticlesLocal.find();
+  // })
+ }); 
 
 // var ddpclient = null;
 // Meteor.startup(() => {

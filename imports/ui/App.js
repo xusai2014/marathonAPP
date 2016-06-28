@@ -1,30 +1,37 @@
-import React, { Component} from 'react';
+import React, { Component,PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 
-import { AccountsClient } from 'meteor/accounts-base'
+import { AccountsClient } from 'meteor/accounts-base';
+import {createContainer} from 'meteor/react-meteor-data';
 
-export default class App extends Component {
+import Personal from './profile.js';
+import Login from './login.js';
+import Logout from './logout.js';
+ class App extends Component {
   render() {
-    return (
-        <form onSubmit={this.authentication.bind(this)}>
-          <input ref="username" type="text"/>
-          <input ref="userpwd" type="password"/>
-          <button id="login"></button>
-        </form>
+    if(this.props.user){
+      return (
+        <div>
+        <header><h1>Marathon</h1></header>
+        <Logout />
+        <main>{this.props.content}</main>
+        <footer>From Jerry</footer>
+        </div>
       );
-  }
-  authentication(event){
-    event.preventDefault();
-    const username = ReactDOM.findDOMNode(this.refs.username).value.trim();
-    const userpwd = ReactDOM.findDOMNode(this.refs.userpwd).value.trim();
-
-    
-    Meteor.loginWithPassword({username: username}, userpwd);
-
-    const token = Accounts._storedLoginToken()
-    console.log({token});
-    Accounts.loginWithToken(token, (e) => {
-      console.log(Accounts.user());
-    });
+    } else{
+      return (
+        <Login />
+      );
+    }
   }
 }
+
+App.propTypes={
+  user:PropTypes.object,
+};
+
+export default createContainer(() =>{
+  return {
+    user:Meteor.user(),
+  }
+},App);
