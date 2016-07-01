@@ -4,7 +4,7 @@ import DDPClient from 'ddp';
 // Articles  = new Meteor.Collection("Articles",{connection:DDPCon});
 // ArticlesLocal = new Meteor.Collection("Articles");
 Meteor.startup(function(){
-  __meteor_runtime_config__.ACCOUNTS_CONNECTION_URL="http://localhost:4000/"//Test url
+  __meteor_runtime_config__.ACCOUNTS_CONNECTION_URL="http://localhost:3000/"//Test url
   //__meteor_runtime_config__.ACCOUNTS_CONNECTION_URL="https://www.microduino.cn/"//live
   // BrowserPolicy.content.allowConnectOrigin("https://www.microduino.cn");
   // BrowserPolicy.content.allowFrameOrigin("https://www.microduino.cn");

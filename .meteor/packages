@@ -25,3 +25,7 @@ accounts-password
 react-meteor-data
 
 kadira:flow-router
+
+aldeed:simple-schema
+aldeed:collection2
+aldeed:autoform

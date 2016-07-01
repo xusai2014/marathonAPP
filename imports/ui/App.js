@@ -28,10 +28,12 @@ import Logout from './logout.js';
 
 App.propTypes={
   user:PropTypes.object,
+  content:PropTypes.object
 };
 
-export default createContainer(() =>{
+export default createContainer(({content}) =>{
   return {
     user:Meteor.user(),
+    content:content
   }
 },App);

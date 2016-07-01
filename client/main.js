@@ -2,9 +2,9 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import App from '../imports/ui/App.js';
-import PersonalContainer from '../imports/ui/profile.js';
+import AppContainer from '../imports/ui/App.js';
+import { render } from 'react-dom';
 
 Meteor.startup(()=>{
-  mount(App,{content: <PersonalContainer />});
+  // render(<AppContainer />,document.getElementById('container'))
 });
