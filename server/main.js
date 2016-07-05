@@ -1,5 +1,5 @@
-import { Meteor } from 'meteor/meteor';
-import DDPClient from 'ddp';
+ import { Meteor } from 'meteor/meteor';
+// import DDPClient from 'ddp';
 // const DDPCon = DDP.connect("http://localhost:4000/");
 // Articles  = new Meteor.Collection("Articles",{connection:DDPCon});
 // ArticlesLocal = new Meteor.Collection("Articles");
