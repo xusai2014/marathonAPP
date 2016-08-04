@@ -1,0 +1,8 @@
+{
+  "isDebug": "info",
+  "public": {
+    "remoteConnection":"http://localhost:3000/",
+    "adminAccount":"",
+    "adminPWD":""
+  }
+}
